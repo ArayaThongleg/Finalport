@@ -91,7 +91,7 @@ header .intro-text .skills {
   font-size: 1.25em;
   font-weight: 300;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 576px) {
   header .container {
     padding-top: 200px;
     padding-bottom: 100px;
@@ -166,7 +166,7 @@ header .intro-text .skills {
 }
 
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 576px){
   .navbar-custom {
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
@@ -186,6 +186,27 @@ header .intro-text .skills {
     font-size: 1.5em;
   }
 }
+
+@media only screen and (min-width: 991px) {
+  /* .navbar-custom {
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  } */
+}
 section {
   padding: 50px 0;
 }
@@ -197,7 +218,7 @@ section.success {
   background: #454e4c;
   color: white;
 }
-@media (max-width: 767px) {
+@media only screen and (min-width: 576px) {
   section {
     padding: 75px 0;
   }
