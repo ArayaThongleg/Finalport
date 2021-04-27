@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+
+<head>
+  <meta charset="utf-8">
+  <!-- <title>Responsive Navigation Bar</title> -->
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!-- <nav>
+    <ul>
+      <li class="logo">CodingNepal</li>
+      <li class="items"><a href="#">Home</a></li>
+      <li class="items"><a href="#">My Work</a></li>
+      <li class="items"><a href="#">About ME</a></li>
+      <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+  </nav> -->
+
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#page-top">Manoj Pillai</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li class="page-scroll">
+            <a href="">Home</a>
+          </li>
+          <li class="page-scroll">
+            <a href="About Me.html">About Me</a>
+          </li>
+          <li class="page-scroll">
+            <a href="">My Work</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <header>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-12">
+
+          <video poster="m.png" id="bgvid" playsinline autoplay muted loop src="Ism_Land_final2.mp4"> </video>
+          <div id="polina">
+            <h1>GAME DESIGN</h1>
+
+            <button>Pause</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </header>
+
+  <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      $(document).ready(function () {
+        $('.btn').click(function () {
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+    </script>
+
+    <script>
+      var vid = document.getElementById("bgvid");
+      var pauseButton = document.querySelector("#polina button");
+
+      if (window.matchMedia('(prefers-reduced-motion)').matches) {
+        vid.removeAttribute("autoplay");
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+      }
+
+      function vidFade() {
+        vid.classList.add("stopfade");
+      }
+
+      vid.addEventListener('ended', function () {
+        // only functional if "loop" is removed 
+        vid.pause();
+        // to capture IE10
+        vidFade();
+      });
+
+
+      pauseButton.addEventListener("click", function () {
+        vid.classList.toggle("stopfade");
+        if (vid.paused) {
+          vid.play();
+          pauseButton.innerHTML = "Pause";
+        } else {
+          vid.pause();
+          pauseButton.innerHTML = "Paused";
+        }
+      })
+
+    </script>
+
+    <script>
+
+        // Freelancer Theme JavaScript
+
+        (function ($) {
+          "use strict"; // Start of use strict
+
+          // jQuery for page scrolling feature - requires jQuery Easing plugin
+          $('.page-scroll a').bind('click', function (event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+              scrollTop: ($($anchor.attr('href')).offset().top - 50)
+            }, 1250, 'easeInOutExpo');
+            event.preventDefault();
+          });
+
+          // Highlight the top nav as scrolling occurs
+          $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 51
+          });
+
+          // Closes the Responsive Menu on Menu Item Click
+          $('.navbar-collapse ul li a').click(function () {
+            $('.navbar-toggle:visible').click();
+          });
+
+          // Offset for Main Navigation
+          $('#mainNav').affix({
+            offset: {
+              top: 100
+            }
+          })
+
+          // Floating label headings for the contact form
+          $(function () {
+            $("body").on("input propertychange", ".floating-label-form-group", function (e) {
+              $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
+            }).on("focus", ".floating-label-form-group", function () {
+              $(this).addClass("floating-label-form-group-with-focus");
+            }).on("blur", ".floating-label-form-group", function () {
+              $(this).removeClass("floating-label-form-group-with-focus");
+            });
+          });
+
+        })(jQuery); // End of use strict
+
+
+    </script>
+
+
+
+</body>
+
+</html>
